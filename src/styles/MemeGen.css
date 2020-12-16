@@ -1,4 +1,10 @@
 /* General */
+#tweetStyle{ display: none; }
+
+#memeStyle{ display: none; }
+
+#resultModal{ max-height: 70vh; }
+
 .dlBtn{
   background-color: #1c1c1c;
   padding: 8px;
@@ -9,12 +15,19 @@
   box-shadow: -5px -6px 4px rgba(20, 255, 255, .5);
 }
 
+.dropdown-item{ cursor: pointer; }
+
+#modalBody{
+  width: 100%;
+  max-height: 900px;
+}
+
 /* TWEET STYLE */
 
 .tweetMeme{
   position: relative;
   width: 90vw;
-  height: inherit;
+  height: 290px;
   margin: auto;
   padding: 10px;
   /* border-radius: 7px; */
@@ -42,8 +55,6 @@
     width: 40vw;
   }
 }
-
-/* END OF TWEET STYLE */
 
 /* MEME STYLE */
 
@@ -144,5 +155,3 @@
   80% { transform: rotateZ(0deg); }
   100% { width: 100%; }
 }
-
-/* END OF MEME STYLE */

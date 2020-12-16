@@ -1,12 +1,10 @@
 import './App.css';
-import HeaderComponent from './components/HeaderComponent';
-import MemeGenComponent from './components/MemeGenComponent';
+import Container from './components/Container';
 
 function App() {
   return (
     <div className="App">
-      <HeaderComponent />
-      <MemeGenComponent />
+      <Container />
     </div>
   );
 }

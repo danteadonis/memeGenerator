@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 class HeaderComponent extends Component {
-  state = { 
-    img: '../src/yao ming meme.png'
-   }
+  state = {
+    imgSrc: 'yao_ming_meme.png'
+  }
 
    styles = {
      yaoMing: {
-      width: '70px',
-      height: '70px'
+      width: '50px',
+      height: '50px'
      }
    }
 
@@ -16,13 +16,10 @@ class HeaderComponent extends Component {
     return ( 
       <header>
         <div className="bg-danger">
-
-          {/* RANDOMIZE BG-COLOR */}
-
           <div className="container d-flex justify-content-center">
             <img 
               style={ this.styles.yaoMing } 
-              src={ this.state.img } 
+              src={ this.state.imgSrc } 
               alt="b!tch please"
               className="mr-2"
             />
