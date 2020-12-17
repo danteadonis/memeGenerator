@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HeaderComponent from '../components/HeaderComponent';
 import MemeGenComponent from '../components/MemeGenComponent';
+import FooterComponent from '../components/FooterComponent';
 
 class Container extends Component {
   state = { 
@@ -25,7 +26,7 @@ class Container extends Component {
     const randColor = this.state.bgColors[randNum].color;
 
     console.log(`Theme in use: ${randColor}`);
-    
+
     for(let i = 0; i < bgDanger.length; i++){
       bgDanger[i].classList.remove('bg-danger');
       bgDanger[i].classList.add(randColor);
@@ -37,6 +38,7 @@ class Container extends Component {
       <div>
         <HeaderComponent />
         <MemeGenComponent />
+        <FooterComponent />
       </div>
      );
   }

@@ -33,8 +33,8 @@ class MemeGenComponent extends Component {
      htmlToImage.toPng(node)
       .then((dataUrl) => {
         const img = new Image();
-        // img.width=520;
-        // img.height=420;
+        // img.width=950;
+        // img.height=850;
         img.src = dataUrl;
         modalBody.appendChild(img)
       })
@@ -49,8 +49,8 @@ class MemeGenComponent extends Component {
      htmlToImage.toPng(node)
       .then((dataUrl) => {
         const img = new Image();
-        // img.width=520;
-        // img.height=420;
+        // img.width=950;
+        // img.height=850;
         img.src = dataUrl;
         modalBody.appendChild(img)
       })
@@ -119,7 +119,7 @@ class MemeGenComponent extends Component {
               </div>
               <div 
                 id="modalBody" 
-                className="modal-body container text-center"
+                className="modal-body container text-center m-auto"
                 style={ this.styles.modalBody }
               >
                 {/*  */}
@@ -210,7 +210,7 @@ class MemeGenComponent extends Component {
             <button className="btn btn-sm bg-danger text-light float-end">Generate</button>
           </form>
           <div id="finalMemeImg">
-            <div className="picMeme my-5">
+            <div className="picMeme text-center my-5">
               <img id="memeImg" src={ this.state.randomImg } alt="meme"/>
               <h3 className="text-center upText">{ this.state.topText }</h3>
               <h3 className="text-center downText">{ this.state.bottomText }</h3>
@@ -218,7 +218,7 @@ class MemeGenComponent extends Component {
           </div>
           <button 
             onClick={ this.MemeConverter } 
-            className="btn btn-sm bg-danger text-light float-end my-4"
+            className="btn btn-sm bg-danger text-light float-end"
             data-bs-toggle="modal" 
             data-bs-target="#resultModal"
           >

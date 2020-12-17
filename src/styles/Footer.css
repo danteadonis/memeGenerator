@@ -1,0 +1,42 @@
+
+footer{
+  height: 70px;
+  padding: 5px 0px;
+  margin-top: 150px;
+}
+
+footer > ul{
+  list-style-type: none;
+}
+
+ul{
+  padding-left: 0px;
+}
+
+footer > p{
+  font-size: 14px;
+  font-family: 'Mali';
+}
+
+.faIcons{
+  color: #fefefe;
+  font-size: 16px;
+}
+.faIcons:hover{
+  color: #ddd;
+}
+
+/* @media screen and (min-width: 768px){
+  footer{
+    margin-top: 20px;
+    position: fixed;
+    top: 92.5%;
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 768px){
+  footer{
+    margin-top: auto;
+  }
+} */
