@@ -13,7 +13,7 @@ class MemeGenComponent extends Component {
    }
 
    componentDidMount(){
-     fetch('http://i.imgflip.com/get_memes')
+     fetch('https://i.imgflip.com/get_memes')
       .then(res => res.json())
       .then(res => {
         const {memes} = res.data
@@ -61,7 +61,10 @@ class MemeGenComponent extends Component {
 
    ClearImg = () => {
      const modalBody = document.getElementById('modalBody');
-     modalBody.removeChild(modalBody.lastChild);
+    //  modalBody.removeChild(modalBody.lastChild);
+    while(modalBody.firstChild){
+      modalBody.removeChild(modalBody.lastChild);
+    }
    }
 
    HandleChange = (ev) => {
@@ -72,7 +75,7 @@ class MemeGenComponent extends Component {
    }
    
    Generate = (ev) => {
-     ev.preventDefault()
+     ev.preventDefault();
      const rNum = Math.floor(Math.random() * this.state.allMemeImgs.length)
      const rMemeImg = this.state.allMemeImgs[rNum].url
      this.setState({ randomImg: rMemeImg })
@@ -114,6 +117,7 @@ class MemeGenComponent extends Component {
                   className="btn-close" 
                   data-bs-dismiss="modal" 
                   aria-label="Close"
+                  title="Close"
                 >
                 </button>
               </div>
@@ -124,11 +128,17 @@ class MemeGenComponent extends Component {
               >
                 {/*  */}
               </div>
-              {/* <div className="modal-footer">
-                <a href="" dowload="meme.png" onClick={ this.ClearImg }>  
-                <button type="button" className="btn btn-primary">Download</button>
-                </a>
-              </div> */}
+              <div className="modal-footer bg-light">
+                <button
+                  type="button"
+                  onClick={ this.ClearImg }
+                  className="btn btn-sm bg-danger text-light"
+                  data-bs-dismiss="modal"
+                  aria-label="Close Modal"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -142,7 +152,7 @@ class MemeGenComponent extends Component {
             data-bs-toggle="dropdown" 
             aria-expanded="false"
           >
-            Choose Meme Style
+            Select Type
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li onClick={ this.ShowTweetStyle } className="dropdown-item">Tweet</li>
@@ -152,7 +162,7 @@ class MemeGenComponent extends Component {
 
         {/* Tweet style */}
         <div id="tweetStyle">
-          <form className="text-left">
+          <form className="text-left" onSubmit={ this.Generate }>
             <label htmlFor="tweetText" className="form-label">Tweet text</label>
             <input 
               type="text" 
@@ -164,7 +174,12 @@ class MemeGenComponent extends Component {
               onChange={ this.HandleChange }
             />
             <br/>
-            <button className="btn btn-sm bg-danger text-light float-end mb-4">Generate</button>
+            <button 
+              type="button"
+              className="btn btn-sm bg-danger text-light float-end mb-4"
+            >
+              Generate
+            </button>
           </form>
           <div id="tweetStyleImg">
             <div className="tweetMeme text-left mt-5">
@@ -207,7 +222,12 @@ class MemeGenComponent extends Component {
               onChange={ this.HandleChange }
             />
             <br/>
-            <button className="btn btn-sm bg-danger text-light float-end">Generate</button>
+            <button
+              type="button"
+             className="btn btn-sm bg-danger text-light float-end"
+            >
+               Generate
+            </button>
           </form>
           <div id="finalMemeImg">
             <div className="picMeme text-center my-5">

@@ -32,6 +32,9 @@ class HeaderComponent extends Component {
             </div>
           </div>
         </div>
+        <p className="text-center mt-2">Generate an image you'd like to use, type in your joke/pun, click 'Use This', download your new meme.
+        <br />
+        It's that easy!</p>
       </header>
      );
   }
